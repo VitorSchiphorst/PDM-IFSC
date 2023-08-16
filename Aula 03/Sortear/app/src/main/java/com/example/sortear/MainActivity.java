@@ -7,14 +7,10 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.google.android.material.textfield.TextInputEditText;
-
-import java.util.Random;
-
 public class MainActivity extends AppCompatActivity {
 
-    EditText max, min;
-    TextView txtSorteio;
+    EditText edMax, edMin;
+    TextView txtResultado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +27,6 @@ public class MainActivity extends AppCompatActivity {
         int max = Integer.parseInt(edMax.getText().toString());
 
         int sorteado = (int) Math.random() * (max - min + 1) + min;
-        txtSorteio.setText(Integer.toString(sorteado));
+        txtResultado.setText(Integer.toString(sorteado));
     }
 }
