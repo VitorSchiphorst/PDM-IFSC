@@ -36,7 +36,7 @@ public class ItemFrutasAdapter extends ArrayAdapter<ItemFrutas> {
         TextView txtId = convertView.findViewById(R.id.id);
         ImageView txtImage = convertView.findViewById(R.id.imageView);
 
-        txtImage.setText(getItem(position).nome);
+        txtNome.setText(getItem(position).nome);
         txtId.setText(String.valueOf(getItem(position).id));
         txtImage.setImageResource(getItem(position).image);
 

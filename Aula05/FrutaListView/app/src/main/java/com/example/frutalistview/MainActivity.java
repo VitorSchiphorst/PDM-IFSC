@@ -21,8 +21,6 @@ public class MainActivity extends AppCompatActivity {
         listView = findViewById(R.id.listView);
 
         listaItensFrutas.add(new ItemFrutas(1, "Laranja", R.drawable.laranja));
-        listaItensFrutas.add(new ItemFrutas(2, "Maçã", R.drawable.maca));
-        listaItensFrutas.add(new ItemFrutas(3, "Pera", R.drawable.pera));
         listaItensFrutas.add(new ItemFrutas(4, "Melancia", R.drawable.melancia));
 
         ItemFrutasAdapter adapter = new ItemFrutasAdapter(this, R.layout.item_frutas, listaItensFrutas);
