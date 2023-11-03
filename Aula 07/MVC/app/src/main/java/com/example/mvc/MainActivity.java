@@ -22,13 +22,20 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
+<<<<<<< Updated upstream
     ListView listView;
+=======
+    SQLiteDatabase sqlite;
+    ListView btn, btnListar;
+    ListView notaEditText;
+>>>>>>> Stashed changes
 
     @SuppressLint({"WrongViewCast", "MissingInflatedId"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+<<<<<<< Updated upstream
         listView = findViewById(R.id.listview);
     }
 
@@ -36,6 +43,22 @@ public class MainActivity extends AppCompatActivity {
         Intent i = new Intent(this, ExibirNota.class);
         i.putExtra("nota", 0);
         startActivity(i);
+=======
+        btn = findViewById(R.id.btn);
+        btnListar = findViewById(R.id.btnLista);
+        notaEditText = findViewById(R.id.editTextNota);
+
+        sqlite = openOrCreateDatabase("db", MODE_PRIVATE, null);
+        sqlite.execSQL("CREATE TABLE IF NOT EXISTS usr (id INTEGER PRIMARY KEY AUTOINCREMENT," + " nota INTEGER);");
+    }
+
+    @SuppressLint("Range")
+    public void btnInput (View v) {
+        String EditTextNota = notaEditText.getText().toString();
+        ContentValues cv = new ContentValues();
+        cv.put("nota", EditTextNota);
+        sqlite.insert("usr", null, cv);
+>>>>>>> Stashed changes
     }
 
     public void onStart() {
