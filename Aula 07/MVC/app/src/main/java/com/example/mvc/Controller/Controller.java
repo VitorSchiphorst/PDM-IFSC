@@ -20,7 +20,7 @@ public class Controller {
 
     public Controller(Context c) {
         mContext = c;
-        notaDAO = new NotaDAO();
+        notaDAO = new NotaDAO(c);
     }
 
     public Nota cadastrarNota(Nota n) {
@@ -34,7 +34,7 @@ public class Controller {
     public ArrayList<String> listaTituloNotas() {
         ArrayList<String> result = new ArrayList<String>();
         for (Nota nota: this.listaNotas()) {
-            result.add(nota.get);
+            result.add(nota.getNota().toString());
         }
         return result;
     }

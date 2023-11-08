@@ -12,19 +12,16 @@ public class NotaDAO {
 
     SQLiteDatabase db;
 
-    public NotaDao(Context c) {
+    public NotaDAO(Context c) {
         this.db = c.openOrCreateDatabase("notas.db", Context.MODE_PRIVATE, null);
         db.execSQL("CREATE TABLE IF NOT EXISTS notas (id INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + "titulo VARCHAR,"
-                + "texto VARCHAR);");
+                + "nota VARCHAR);");
     }
 
-    public Nota inserirNota(Nota n) {
+    public void inserirNota(Nota n) {
         ContentValues cv = new ContentValues();
-        cv.put("titulo", n.titulo);
-        cv.put("texto", n.txt);
+        cv.put("nota", n.nota);
         db.insert("notas", null, cv);
-        return n;
     }
 
     public ArrayList<Nota> getListaNota() {
@@ -33,7 +30,7 @@ public class NotaDAO {
         ArrayList<Nota> array = new ArrayList<>();
 
         while (cursor.isAfterLast()) {
-            Nota n = new Nota(cursor.getInt(0), cursor.getString(1), cursor.getString(2));
+            Nota n = new Nota(cursor.getInt(0), cursor.getString(1));
             array.add(n);
             cursor.moveToNext();
         }

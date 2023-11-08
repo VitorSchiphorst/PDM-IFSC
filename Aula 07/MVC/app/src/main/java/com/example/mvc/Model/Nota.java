@@ -2,21 +2,26 @@ package com.example.mvc.Model;
 
 public class Nota {
     int id;
-    String titulo;
-    String txt;
-    public Nota(int id , String titulo, String txt) {
+    String nota;
+    public Nota(int id , String nota) {
         this.id = id;
-        this.titulo = titulo;
-        this.txt = txt;
-    }
-    public  Nota (String titulo, String txt){
-        this.titulo = titulo;
-        this.txt = txt;
+        this.nota = nota;
     }
     public int getId() {
+
         return id;
     }
     public void setId(int id) {
+
         this.id = id;
+    }
+
+    public String getNota() {
+
+        return nota;
+    }
+    public void setNota(String nota) {
+
+        this.nota = nota;
     }
 }
