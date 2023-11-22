@@ -1,5 +1,7 @@
 package com.example.mvc.Model;
 
+import android.text.Editable;
+
 public class Nota {
     int id;
     String nota;
@@ -7,6 +9,7 @@ public class Nota {
         this.id = id;
         this.nota = nota;
     }
+
     public int getId() {
 
         return id;

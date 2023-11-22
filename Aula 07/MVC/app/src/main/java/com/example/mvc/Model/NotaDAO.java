@@ -18,10 +18,11 @@ public class NotaDAO {
                 + "nota VARCHAR);");
     }
 
-    public void inserirNota(Nota n) {
+    public Nota inserirNota(Nota n) {
         ContentValues cv = new ContentValues();
         cv.put("nota", n.nota);
         db.insert("notas", null, cv);
+        return n;
     }
 
     public ArrayList<Nota> getListaNota() {
